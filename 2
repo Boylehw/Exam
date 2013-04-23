@@ -1,0 +1,59 @@
+import javax.swing.*;
+
+import java.util.*;
+
+public class Display {
+
+  static String Again;
+  static String Guess;
+
+  
+  public static void main(String[] args) {
+  	
+  
+
+
+  	do{
+
+  	 
+  	 
+  	 
+  	// User Guess
+  	Guess = JOptionPane.showInputDialog(null,
+  			"Is the Dice going to land on Low (1-6) or High (7-12)?");
+
+  	// Create and roll dice
+  	Dice dice1 = new Dice();
+
+  	
+  	//Add Die together
+  	int Roll1=dice1.Roll();
+  	int Roll2=dice1.Roll();
+  	int TotalRoll=Roll1+Roll2;
+  	
+
+
+  	// Deciding winning value
+  	if (Guess.equalsIgnoreCase("Low")) {
+  		if (TotalRoll<=6) {
+  			JOptionPane.showMessageDialog(null, "Dice is "+ dice1.Roll()+", You Win");
+  		} else {
+  			JOptionPane.showMessageDialog(null, "Dice is "+ dice1.Roll()+", You Lose");
+  		}
+  	} else if(Guess.equalsIgnoreCase("High")){
+  		if (TotalRoll>7){
+  			JOptionPane.showMessageDialog(null, "Dice is "+ dice1.Roll()+", You Win");
+  			} else {
+  				JOptionPane.showMessageDialog(null, "Dice is "+ dice1.Roll()+", You Lose");
+  			}
+  			}
+
+  		Again= JOptionPane.showInputDialog("Play Again?");
+  	}while (Again.equalsIgnoreCase("Yes"));
+  	
+
+
+
+  }
+
+}
